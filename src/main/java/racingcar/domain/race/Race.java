@@ -21,10 +21,7 @@ public class Race {
         for (int i = 0; i < totalRounds; i++) {
             runOneRound();
 
-            List<CarSnapshot> carSnapshots = cars.stream()
-                    .map(Car::toSnapshot)
-                    .collect(Collectors.toList());
-            roundResults.add(new RoundResult(carSnapshots));
+            roundResults.add(new RoundResult(cars));
         }
 
         return roundResults;
